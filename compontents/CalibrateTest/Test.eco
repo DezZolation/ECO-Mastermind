@@ -1,0 +1,44 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+modes { low <: mid; mid <: high; }
+
+public class Test {
+
+  public static void main(String[] args) {
+
+    int x;
+    sustainable {
+      for(x = 0; x < 100; x += 1) {
+        System.out.println("x: " + x);
+      }
+    }
+    bsupply(battery*0.60)
+    demand(100) -> (100 - x);
+
+    int y;
+    sustainable {
+      for(y = 0; y < 200; y += 1) {
+        System.out.println("y: " + y);
+      }
+    }
+    bsupply(battery*0.60)
+    demand(100) -> (100 - y);
+    //provide(40);
+
+    try{
+      Socket s = new Socket("127.0.0.1", 9042);
+        BufferedReader input =
+          new BufferedReader(new InputStreamReader(s.getInputStream()));
+        String answer = input.readLine();
+        System.out.println("The answer is: " + answer);
+    } catch(IOException v)
+    {
+        System.out.println(v);
+    }
+
+  }
+
+}
