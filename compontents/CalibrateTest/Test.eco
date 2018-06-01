@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 modes { low <: mid; mid <: high; }
@@ -28,17 +29,25 @@ public class Test {
     demand(100) -> (100 - y);
     //provide(40);
 
-    try{
-      Socket s = new Socket("127.0.0.1", 9042);
-        BufferedReader input =
-          new BufferedReader(new InputStreamReader(s.getInputStream()));
-        String answer = input.readLine();
-        System.out.println("The answer is: " + answer);
-    } catch(IOException v)
-    {
-        System.out.println(v);
-    }
+            try
+        {
+            Socket socket = new Socket("127.0.0.1", 9042);
+            BufferedReader input =
+                    new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+            output.println("subscribe");
+            while(true)
+            {
+                if(input.readLine().equals("subscribe"))
+                {
+                    String answer = input.readLine();
+                    System.out.println("The answer is: " + answer);
+                }
+            }
+        }catch(IOException v)
+        {
+            System.out.println(v);
+        }
 
   }
-
 }

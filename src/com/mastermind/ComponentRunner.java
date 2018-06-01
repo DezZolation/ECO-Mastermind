@@ -1,53 +1,52 @@
 package com.mastermind;
 
-
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ComponentRunner implements Runnable
+public class ComponentRunner
 {
-    private Mastermind mastermind;
+    private List<EcoProcess> processes;
+    private IORunner serverTerminal;
+    private int processCounter;
 
-    public ComponentRunner(Mastermind m)
+    public ComponentRunner()
     {
-        this.mastermind = m;
-    }
+        processes = new ArrayList<>();
+        processCounter = 0;
 
-    public void run()
-    {
+        IORunner serverTerminal = new IORunner(this);
+        new Thread(serverTerminal).start();
+
         try {
             ServerSocket listener = new ServerSocket(9042);
-            try{
-                while(true) {
-                    Socket socket = listener.accept();
-                    try {
-                        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                        out.println(new Date().toString());
-                    } finally {
-                        socket.close();
-                    }
-                }
-            } finally {
-                listener.close();
+
+            while(true)
+            {
+                Socket socket = listener.accept();
+
+                processCounter++;
+                EcoProcess ecoProcess = new EcoProcess(socket, this, processCounter);
+                processes.add(ecoProcess);
+                new Thread(ecoProcess).start();
             }
+
         } catch(IOException v)
         {
             System.out.println(v);
         }
 
-        /*while(true)
-        {
-            mastermind.increment();
-            try
-            {
-                Thread.sleep(1000);
-            } catch(InterruptedException v) {
-                System.out.println(v);
-            }
-        }*/
+    }
 
+    public List<EcoProcess> getProcesses()
+    {
+        return processes;
+    }
+
+    public void terminateProcess(EcoProcess p)
+    {
+        processes.remove(p);
     }
 }

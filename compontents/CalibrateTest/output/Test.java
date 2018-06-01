@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 class $UTILMODES{
     public static final int $MAX = 2;
@@ -90,25 +91,42 @@ public class Test {
                                              ecor.CalibratorStack.pop();
                                              ;
                                              try {
-                                                 Socket s =
+                                                 Socket socket =
                                                    new Socket(
                                                    "127.0.0.1",
                                                    9042);
                                                  BufferedReader input =
                                                    new BufferedReader(
                                                    new InputStreamReader(
-                                                     s.
+                                                     socket.
                                                        getInputStream(
                                                          )));
-                                                 String answer =
-                                                   input.
-                                                   readLine(
-                                                     );
-                                                 System.
-                                                   out.
+                                                 PrintWriter output =
+                                                   new PrintWriter(
+                                                   socket.
+                                                     getOutputStream(
+                                                       ),
+                                                   true);
+                                                 output.
                                                    println(
-                                                     "The answer is: " +
-                                                     answer);
+                                                     "subscribe");
+                                                 while (true) {
+                                                     if (input.
+                                                           readLine(
+                                                             ).
+                                                           equals(
+                                                             "subscribe")) {
+                                                         String answer =
+                                                           input.
+                                                           readLine(
+                                                             );
+                                                         System.
+                                                           out.
+                                                           println(
+                                                             "The answer is: " +
+                                                             answer);
+                                                     }
+                                                 }
                                              }
                                              catch (IOException v) {
                                                  System.
@@ -121,43 +139,43 @@ public class Test {
     public static final String jlc$CompilerVersion$jl7 =
       "2.6.1";
     public static final long jlc$SourceLastModified$jl7 =
-      1527763923096L;
+      1527882859451L;
     public static final String jlc$ClassType$jl7 =
-      ("H4sIAAAAAAAAAKVXa2wUVRS+u90+LWxbHmKlpY8FKYVd+IEGimJZFyhu6YZW" +
-       "EktlmZ25ux06L2butkux8khMCT8I0YJgtD8MiCivGAkaQ9JfAsGYQIyJPwT9" +
-       "JRFJ5A+aoOK59+7u7E63NcYmcztz7jnnntd37tmz91GxZaJWQ1d2JxSd+HGK" +
-       "+HcqK/1kt4Et/6bwyohgWlgKKoJl9QAtKjZd9D58dKS/yo1KetEsQdN0IhBZ" +
-       "16wt2NKVQSyFkdemhhSsWgRVhXcKg0IgSWQlEJYt0hZGT+SIEuQLZ0wIgAkB" +
-       "MCHATAi021wgNANrSTVIJQSNWLvQG8gVRiWGSM0jqDFfiSGYgppWE2EegIYy" +
-       "+r0VnGLCKRM1ZH3nPk9y+GhrYOyd7VWfFiFvL/LKWjc1RwQjCBzSiypVrMaw" +
+      ("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
-       "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" +
-       "t9nt8w+k7sSu1A0AAA==");
+       "optZ9+IyVqTMV3FcERLg6zzbV+7hBkoHBytkMMyMCyLOiHgGZE0iaKFTIuuj" +
+       "7yVgANFSFZN+PXuURxOAgGp47hRBSwS6iSlrCWAt1pNwCkG1UyqlsTYEcUBI" +
+       "4ChB8518Eb4FXOUsEFSEoLlONqYJslTryFJOfu5vWXtkr7ZJczObJSwq1P4y" +
+       "EKp3CG3FcWxiTcRcsHJp+Jgw78ohN0LAPNfBzHkuv/bghWX1E9c4z1MFeLpi" +
+       "u7BIouLJ2KybC4Itq4uoGWWGbsk0+Xmes/KPpHfaUgYgb15WI930ZzYntn71" +
+       "yv6P8T03quhAJaKuJFWoo2pRVw1ZweZGrGFTIFjqQOVYk4JsvwOVwntY1jCn" +
+       "dsXjFiYdyKMwUonOviFEcVBBQ1QK77IW1zPvhkD62XvKQAiVwoMq4SlH/I/9" +
+       "J+i5F9f0RUydOm31hYJdyzsFC0pBhRLqo/ZRXAA2+4IAgBg1sgdbpI8ufizq" +
+       "xv9VkKIWVg25XBC8BU7oKlD1m3RFwmZUHEuuDz04H73hzpZy2jeCPFQZcrmY" +
+       "kjm0unn0IXYDgELoT5Ut3a9u3nmoqQjSbgx5wHHK2gTnp48KiXrQhmoHa0gi" +
+       "1Mv8D7aP+v84vY7XS2DqvlpQGk0cHzqwbd8KN3LnN0hqOpAqqHiEtrVs+/I5" +
+       "gVFIr3f07sMLx0Z0GyJ5HTeN3MmSFHlNziCbuogl6GW2+qUNwqXolRGfG3kA" +
+       "ztDCiAAlB92h3nlGHgLbMt2M+lIMDsd1UxUUupVpQRWk39SHbArL/iy61PBC" +
+       "oAl0GMga4YYvJk5cerd1tTu3Z3pzbqFuTDgCq+3895gYA/2H45G3j94f3c6S" +
+       "DxzNhQ7w0TUI5QrZgIi9cW3393dun/zWbRcMgYspGVNkMQU6FtunAFoVqH2a" +
+       "Vt/LmqpLclwWYgqmdfend9HKS78eqeKJUoCSyfOyf1dg059cj/bf2PF7PVPj" +
+       "EultYXtus/EAzLY1t5umsIfakTpwq+7EVeF9aGbQQCx5GLOegJhniIXezzLS" +
+       "wtbljr0VdGkwJu2lGGV++ot9NLLVR5enedzo6xIHp4nqproA2OV18uDYuNR1" +
+       "aiWHXU1+Uw3BzHDuu7++9h//8XqBblBOdGO5ggexknMmhXtdHtw72d1oF/3h" +
+       "M59cJjdb1/Ajl06NdKfg1YO/1PY837/zP4B8ocN5p8oznWevb1wsvuVGRVl8" +
+       "T7ru84XacsMAh5oY5hONBpRSKlga65kB1RCOKpqGJfDMSF8G7D/dnW3QdU4a" +
+       "jQUz6mYZBThYbHJKOQrHlQ34oqmDyCqTX8njHzZ/s2+8+SdIZS8qky0Y5trN" +
+       "RIEZIUfmt7N37t2aWXeedShPTLC4l87havLslDcSMScrs0GppTFomC4ojHUu" +
+       "jL8MYnSC8vMJyjAMjpTQNCjqpMs6uK5UaKcQnpZppnRTVmFwGExPNoGRmjsD" +
+       "7909x2vTOQY5mPGhscOP/UfG3DmzYvOkcS1Xhs+LzMaZPBqP4c8Fz9/0oQ5Q" +
+       "Ap8XaoLpoaUhO7UYBkV043RmsSM2/Hxh5MuPRkbd6YA8C7EY1GWpQGNJX+qG" +
+       "USDkfEJLobyWYjgbTHNedNlvhwzakvzXQ1S8ML55y94Hz5xi0C2GXx3Dw2zW" +
+       "hDrhd1cWsY1TasvoKtnU8mjWxfJFGefybjWHbQsLN/+QahDWroc/f+KztafH" +
+       "b7Pb5x/nbVwa1A0AAA==");
 }
