@@ -23,12 +23,13 @@ public class VirtualBareMetalBattery implements BareMetalBattery {
 	
 	public VirtualBareMetalBattery() {
 
-		boolean connected = false;
-
 		virtualResourceSupply = new HashMap<>();
 		peakResourceDemand = new HashMap<>();
 		providedResources = new HashMap<>();
 
+		//TODO: now first initialize peak and provided maps with values from the code
+
+		boolean connected = false;
 		while(!connected)
 		{
 			try{
@@ -44,11 +45,37 @@ public class VirtualBareMetalBattery implements BareMetalBattery {
 				System.out.println(e);
 			}
 		}
+		try {
+			// Loop over all demanded resources and send them to the server
+			Iterator i = peakResourceDemand.entrySet().iterator();
+			while(i.hasNext())
+			{
+				Map.Entry pair = (Map.Entry)i.next();
+				output.println("peak " + pair.getKey() + " " + pair.getValue().toString());
+				i.remove();
+			}
 
-		new Thread(new BatteryRunner(input, output, this)).start();
-		
+			// Loop over all provided resources and send them to the server
+			i = providedResources.entrySet().iterator();
+			while(i.hasNext())
+			{
+				Map.Entry pair = (Map.Entry)i.next();
+				output.println("provided " + pair.getKey() + " " + pair.getValue().toString());
+				i.remove();
+			}
+		} catch(Exception e){
+			System.out.println(e);
+		}
+
+		// While we have nothing yet, set power to 100
+		setVirtualResourceSupply("power", 100);
+
+		// Signal the server that all the initialization steps have been completed and the process will accept new udpates now
+		Runnable runner = new BatteryRunner(input, output, this);
+		new Thread(runner).start();
+
+		System.out.println("Initialization done. Starting process");
 	}
-
 	public HashMap<String, Integer> getPeakResourceDemand()
 	{
 		return peakResourceDemand;
@@ -93,6 +120,6 @@ public class VirtualBareMetalBattery implements BareMetalBattery {
 		Map.Entry<String,Integer> entry = virtualResourceSupply.entrySet().iterator().next();
 		String key = entry.getKey();
 		return getResourceSupply(key);
-	};
+	}
 
 }

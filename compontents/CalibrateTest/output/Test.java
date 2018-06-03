@@ -46,84 +46,55 @@ public class Test {
                                              }
                                              ecor.CalibratorStack.pop();
                                              ;
-                                             final int[] y = new int[1];
-                                             ecor.CalibratorStack.push(new ecor.Calibrator() {
-                                             double supplyRatio = 0;
-                                             public int mode = $UTILMODES.$MAX;
-                                             public int getMode(int max) {
-                                             return mode;
-                                             }
-                                             public int supply() {
-                                             return ecor.bsupply.BatterySupply.sharedSupply().getRemainingCapacity();}
-                                             private double supplyLimit = (ecor.bsupply.BatterySupply.sharedSupply().getRemainingCapacity()) *
-                                               0.6;
-                                             private int initialSupply = this.supply();
-                                             public Object calibrate(Object input) {
-                                             supplyRatio = (supplyLimit - (initialSupply - this.supply()))/supplyLimit;
-                                             return input;
-                                             }
-                                             public void adjust() {
-                                             double demandRatio = (double)(100 -
-                                               y[0])/(100);
-                                             System.out.println(supplyRatio + " " + demandRatio);
-                                             if (supplyRatio > demandRatio * 1.1 && mode < $UTILMODES.$MAX) ++mode;
-                                             else if (demandRatio > supplyRatio * 1.1 && mode > 0) --mode;
-                                             }
-                                             });
-                                             {
-                                                 for (ecor.CalibratorStack.calibrate(y[0] =
-                                                        0);
-                                                      y[0] <
-                                                        200;
-                                                      ecor.CalibratorStack.calibrate(y[0] +=
-                                                        1)) {
-                                                     
-                                                 }
-                                             }
-                                             ecor.CalibratorStack.pop();
-                                             ;
+                                             provide(
+                                               "water",
+                                               40);
+    }
+    public static void provide(String resource, int amount) {
+        
     }
     public Test() { super(); }
     public static final String jlc$CompilerVersion$jl7 =
       "2.6.1";
     public static final long jlc$SourceLastModified$jl7 =
-      1528023127984L;
+      1528033006979L;
     public static final String jlc$ClassType$jl7 =
-      ("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" +
-       "b7Pb5x/nbVwa1A0AAA==");
+      ("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" +
+       "8BfPfL72zPgdNlD/BS0yKcCnDgAA");
 }

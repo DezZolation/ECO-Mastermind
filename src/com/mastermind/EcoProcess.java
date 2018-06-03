@@ -41,15 +41,9 @@ public class EcoProcess
             }
 
         // This line is here because we need to initialize something. considering eco won't ask us for a specific resource (tsupply), we are just going to return power
-        setVirtualResourceSupply("power", 500);
+        setVirtualResourceSupply("power", 10);
 
-        // Let's start by requesting the peak demand of all the required resources
-        output.println("peak");
-
-        // Then also ask about the provided resources
-        output.println("provided");
-
-        // Now create the eco process runner so it can accept incoming communication from the eco process
+        // Create the eco process runner so it can accept incoming communication from the eco process
         runner = new Thread(new EcoProcessRunner(input, output, this));
         runner.start();
     }

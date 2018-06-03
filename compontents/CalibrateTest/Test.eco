@@ -18,15 +18,11 @@ public class Test {
     }
     bsupply(battery*0.60)
     demand(100) -> (100 - x);
+    provide("water", 40);
+  }
 
-    int y;
-    sustainable {
-      for(y = 0; y < 200; y += 1) {
-        //System.out.println("y: " + y);
-      }
-    }
-    bsupply(battery*0.60)
-    demand(100) -> (100 - y);
-    //provide(40);
+  public static void provide(String resource, int amount)
+  {
+    //TODO
   }
 }

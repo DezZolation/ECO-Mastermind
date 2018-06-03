@@ -30,36 +30,11 @@ public class BatteryRunner implements Runnable {
                 // Split the command string by space seperators
                 String[] split = input.readLine().split(" ");
 
-                // Handle peak command
-                if(split[0].equals("peak"))
-                {
-                    // Loop over all demanded resources and send them to the server
-                    Iterator i = battery.getPeakResourceDemand().entrySet().iterator();
-                    while(i.hasNext())
-                    {
-                        Map.Entry pair = (Map.Entry)i.next();
-                        output.println("peak " + pair.getKey() + " " + pair.getValue().toString());
-                        i.remove();
-                    }
-                }
-
                 // Handle update of virtualResourceSupply
                 if(split[0].equals("update"))
                 {
                     battery.setVirtualResourceSupply(split[1], Integer.parseInt(split[2]));
-                }
-
-                // Handle provided command
-                if(split[0].equals("provided"))
-                {
-                    // Loop over all provided resources and send them to the server
-                    Iterator i = battery.getProvidedResources().entrySet().iterator();
-                    while(i.hasNext())
-                    {
-                        Map.Entry pair = (Map.Entry)i.next();
-                        output.println("provided " + pair.getKey() + " " + pair.getValue().toString());
-                        i.remove();
-                    }
+                    System.out.println("Updated " + split[1] + " to " + split[2] );
                 }
             }
         }catch(IOException v)
