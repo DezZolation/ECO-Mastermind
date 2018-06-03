@@ -72,7 +72,7 @@ public class IORunner implements Runnable
             // Iterate over the required resources
             System.out.println(dash());
             System.out.println("Required:");
-            it = e.getVirtualRequiredResources().entrySet().iterator();
+            it = e.getVirtualSuppliedResources().entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry)it.next();
                 System.out.println(prettyLine(pair.getKey().toString(), pair.getValue().toString()));
@@ -118,7 +118,7 @@ public class IORunner implements Runnable
         System.out.println("Total Resources Required:");
         for (EcoProcess e : processes)
         {
-            it = e.getVirtualRequiredResources().entrySet().iterator();
+            it = e.getVirtualSuppliedResources().entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry)it.next();
                 if(hm.get(pair.getKey().toString()) == null)

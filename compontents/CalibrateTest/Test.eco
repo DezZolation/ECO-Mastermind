@@ -13,7 +13,7 @@ public class Test {
     int x;
     sustainable {
       for(x = 0; x < 100; x += 1) {
-        System.out.println("x: " + x);
+        //System.out.println("x: " + x);
       }
     }
     bsupply(battery*0.60)
@@ -22,32 +22,11 @@ public class Test {
     int y;
     sustainable {
       for(y = 0; y < 200; y += 1) {
-        System.out.println("y: " + y);
+        //System.out.println("y: " + y);
       }
     }
     bsupply(battery*0.60)
     demand(100) -> (100 - y);
     //provide(40);
-
-            try
-        {
-            Socket socket = new Socket("127.0.0.1", 9042);
-            BufferedReader input =
-                    new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
-            output.println("subscribe");
-            while(true)
-            {
-                if(input.readLine().equals("subscribe"))
-                {
-                    String answer = input.readLine();
-                    System.out.println("The answer is: " + answer);
-                }
-            }
-        }catch(IOException v)
-        {
-            System.out.println(v);
-        }
-
   }
 }

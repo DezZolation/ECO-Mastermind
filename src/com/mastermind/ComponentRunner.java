@@ -30,7 +30,7 @@ public class ComponentRunner
                 processCounter++;
                 EcoProcess ecoProcess = new EcoProcess(socket, this, processCounter);
                 processes.add(ecoProcess);
-                new Thread(ecoProcess).start();
+                System.out.println("New Process subscribed. Total: " + processes.size());
             }
 
         } catch(IOException v)

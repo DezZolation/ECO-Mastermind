@@ -41,11 +41,7 @@ public class Test {
                                                         100;
                                                       ecor.CalibratorStack.calibrate(x[0] +=
                                                         1)) {
-                                                     System.
-                                                       out.
-                                                       println(
-                                                         "x: " +
-                                                         x[0]);
+                                                     
                                                  }
                                              }
                                              ecor.CalibratorStack.pop();
@@ -81,65 +77,17 @@ public class Test {
                                                         200;
                                                       ecor.CalibratorStack.calibrate(y[0] +=
                                                         1)) {
-                                                     System.
-                                                       out.
-                                                       println(
-                                                         "y: " +
-                                                         y[0]);
+                                                     
                                                  }
                                              }
                                              ecor.CalibratorStack.pop();
                                              ;
-                                             try {
-                                                 Socket socket =
-                                                   new Socket(
-                                                   "127.0.0.1",
-                                                   9042);
-                                                 BufferedReader input =
-                                                   new BufferedReader(
-                                                   new InputStreamReader(
-                                                     socket.
-                                                       getInputStream(
-                                                         )));
-                                                 PrintWriter output =
-                                                   new PrintWriter(
-                                                   socket.
-                                                     getOutputStream(
-                                                       ),
-                                                   true);
-                                                 output.
-                                                   println(
-                                                     "subscribe");
-                                                 while (true) {
-                                                     if (input.
-                                                           readLine(
-                                                             ).
-                                                           equals(
-                                                             "subscribe")) {
-                                                         String answer =
-                                                           input.
-                                                           readLine(
-                                                             );
-                                                         System.
-                                                           out.
-                                                           println(
-                                                             "The answer is: " +
-                                                             answer);
-                                                     }
-                                                 }
-                                             }
-                                             catch (IOException v) {
-                                                 System.
-                                                   out.
-                                                   println(
-                                                     v);
-                                             }
     }
     public Test() { super(); }
     public static final String jlc$CompilerVersion$jl7 =
       "2.6.1";
     public static final long jlc$SourceLastModified$jl7 =
-      1527882859451L;
+      1528023127984L;
     public static final String jlc$ClassType$jl7 =
       ("H4sIAAAAAAAAAKVXa2wUVRS+u90+KWxbHmKlpY8FKYVd+IEGimJZFyhu6YZW" +
        "EktlmZ25ux06L2butkux8khMCT+I0YJgtD8MiCivGAkaQ9JfAsGYQIyJPwT9" +
