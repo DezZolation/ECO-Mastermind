@@ -19,5 +19,14 @@ public class BatterySupply {
 	public int getRemainingCapacity() {
 		return bareMetalBattery.getRemainingCapacity();
 	}
-	
+
+	public void provide(String resource, int amount)
+	{
+		bareMetalBattery.provide(resource, amount);
+	}
+
+	public void peak(String resource, int amount)
+	{
+		bareMetalBattery.peak(resource, amount);
+	}
 }

@@ -52,7 +52,6 @@ public class VirtualBareMetalBattery implements BareMetalBattery {
 			{
 				Map.Entry pair = (Map.Entry)i.next();
 				output.println("peak " + pair.getKey() + " " + pair.getValue().toString());
-				i.remove();
 			}
 
 			// Loop over all provided resources and send them to the server
@@ -61,7 +60,7 @@ public class VirtualBareMetalBattery implements BareMetalBattery {
 			{
 				Map.Entry pair = (Map.Entry)i.next();
 				output.println("provided " + pair.getKey() + " " + pair.getValue().toString());
-				i.remove();
+
 			}
 		} catch(Exception e){
 			System.out.println(e);
@@ -120,6 +119,18 @@ public class VirtualBareMetalBattery implements BareMetalBattery {
 		Map.Entry<String,Integer> entry = virtualResourceSupply.entrySet().iterator().next();
 		String key = entry.getKey();
 		return getResourceSupply(key);
+	}
+
+	public void provide(String resource, int amount)
+	{
+		providedResources.put(resource, amount);
+		output.println("provided " + resource + " " + amount);
+	}
+
+	public void peak(String resource, int amount)
+	{
+		peakResourceDemand.put(resource, amount);
+		output.println("peak " + resource + " " + amount);
 	}
 
 }

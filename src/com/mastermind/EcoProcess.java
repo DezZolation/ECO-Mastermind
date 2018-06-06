@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.HashMap;
+import java.util.Map;
 
 public class EcoProcess
 {
@@ -40,9 +41,6 @@ public class EcoProcess
                 System.out.println(e);
             }
 
-        // This line is here because we need to initialize something. considering eco won't ask us for a specific resource (tsupply), we are just going to return power
-        setVirtualResourceSupply("power", 10);
-
         // Create the eco process runner so it can accept incoming communication from the eco process
         runner = new Thread(new EcoProcessRunner(input, output, this));
         runner.start();
@@ -55,14 +53,36 @@ public class EcoProcess
         componentRunner.terminateProcess(this);
     }
 
+    public boolean requiresResource(String resource)
+    {
+        return peakResourceDemand.containsKey(resource);
+    }
+
     public void updatePeakResourceDemand(String resource, int demand)
     {
         peakResourceDemand.put(resource, demand);
+        componentRunner.reschedule();
     }
 
     public void updateProvidedResources(String resource, int provided)
     {
         providedResources.put(resource, provided);
+        componentRunner.reschedule();
+    }
+
+    /**
+     * @return float that represents the average share this process has to all resources in the system
+     */
+    public Float averageShare()
+    {
+        float shareSum = 0;
+        for(Map.Entry<String, Integer> entry : providedResources.entrySet())
+        {
+            int total = componentRunner.getTotalProvidedResource(entry.getKey());
+            shareSum += ((float) entry.getValue() / total);
+        }
+
+        return shareSum / providedResources.size();
     }
 
     /**

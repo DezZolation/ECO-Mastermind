@@ -18,11 +18,5 @@ public class Test {
     }
     bsupply(battery*0.60)
     demand(100) -> (100 - x);
-    provide("water", 40);
-  }
-
-  public static void provide(String resource, int amount)
-  {
-    //TODO
   }
 }

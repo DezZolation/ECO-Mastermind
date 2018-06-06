@@ -7,6 +7,7 @@ public class IORunner implements Runnable
 {
     private Scanner scanner;
     private ComponentRunner componentRunner;
+    private String command;
 
     public IORunner(ComponentRunner runner)
     {
@@ -18,9 +19,11 @@ public class IORunner implements Runnable
     {
         while(true)
         {
-            String command = scanner.nextLine();
+            command = scanner.nextLine();
+
             try{
-                Method method = this.getClass().getMethod(command);
+                String[] split = command.split(" ");
+                Method method = this.getClass().getMethod(split[0]);
                 method.invoke(this);
             }
             catch(NoSuchMethodException e)
@@ -38,17 +41,18 @@ public class IORunner implements Runnable
     {
         System.out.println(prettyLine("Command", "Description"));
         System.out.println(dash());
-        System.out.println(prettyLine("help", "A list of available Commands"));
+        System.out.println(prettyLine("supply <resource> <amount>", "Adds a resource to the general supply, use -1 for an infite supply"));
         System.out.println(prettyLine("list", "List all current ECO processes and their provided and required resources"));
         System.out.println(prettyLine("rum", "Prints an RUM of the entire system"));
-        System.out.println(prettyLine("test", "Creates a dummy Eco process"));
         System.out.println(prettyLine("exit", "Terminate the Mastermind"));
         System.out.println("");
     }
 
-    public void test()
+    public void supply()
     {
-        Test t = new Test();
+        String[] split = command.split(" ");
+        componentRunner.getResources().put(split[1], Integer.parseInt(split[2]));
+        componentRunner.reschedule();
     }
 
     public void list()
@@ -62,21 +66,15 @@ public class IORunner implements Runnable
             // Iterate over the provided resources
             System.out.println(dash());
             System.out.println("Provided:");
-            Iterator it = e.getProvidedResources().entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
+            for(Map.Entry pair : e.getProvidedResources().entrySet()) {
                 System.out.println(prettyLine(pair.getKey().toString(), pair.getValue().toString()));
-                it.remove(); // avoids a ConcurrentModificationException
             }
 
             // Iterate over the required resources
             System.out.println(dash());
             System.out.println("Required:");
-            it = e.getVirtualSuppliedResources().entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
+            for(Map.Entry pair : e.getVirtualSuppliedResources().entrySet()) {
                 System.out.println(prettyLine(pair.getKey().toString(), pair.getValue().toString()));
-                it.remove(); // avoids a ConcurrentModificationException
             }
         }
     }
@@ -90,9 +88,7 @@ public class IORunner implements Runnable
         System.out.println("Total Resources Provided:");
         for (EcoProcess e : processes)
         {
-            Iterator it = e.getProvidedResources().entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
+            for (Map.Entry pair : e.getProvidedResources().entrySet()) {
                 if(hm.get(pair.getKey().toString()) == null)
                 {
                     hm.put(pair.getKey().toString(), (int) pair.getValue());
@@ -100,16 +96,12 @@ public class IORunner implements Runnable
                     int amount = hm.get(pair.getKey().toString());
                     hm.put(pair.getKey().toString(), (int) pair.getValue() + amount);
                 }
-                it.remove(); // avoids a ConcurrentModificationException
             }
         }
 
         // Print the hashmap
-        Iterator it = hm.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
+        for(Map.Entry pair : hm.entrySet()) {
             System.out.println(prettyLine(pair.getKey().toString(), pair.getValue().toString()));
-            it.remove(); // avoids a ConcurrentModificationException
         }
 
         // Idem with required
@@ -118,9 +110,7 @@ public class IORunner implements Runnable
         System.out.println("Total Resources Required:");
         for (EcoProcess e : processes)
         {
-            it = e.getVirtualSuppliedResources().entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
+            for (Map.Entry pair : e.getVirtualSuppliedResources().entrySet()) {
                 if(hm.get(pair.getKey().toString()) == null)
                 {
                     hm.put(pair.getKey().toString(), (int) pair.getValue());
@@ -128,16 +118,12 @@ public class IORunner implements Runnable
                     int amount = hm.get(pair.getKey().toString());
                     hm.put(pair.getKey().toString(), (int) pair.getValue() + amount);
                 }
-                it.remove(); // avoids a ConcurrentModificationException
             }
         }
 
         // Print the hashmap
-        it = hm.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
+        for (Map.Entry  pair : hm.entrySet()) {
             System.out.println(prettyLine(pair.getKey().toString(), pair.getValue().toString()));
-            it.remove(); // avoids a ConcurrentModificationException
         }
     }
 
