@@ -109,6 +109,28 @@ public class EcoProcess
         return providedResources;
     }
 
+    public HashMap<String, Integer> getVirtualProvidedResources()
+    {
+        HashMap<String, Integer> returnedMap = new HashMap<>();
+        float shareSum = 0;
+
+        for(Map.Entry<String, Integer> pair : getVirtualSuppliedResources().entrySet())
+        {
+            if(getPeakResourceDemand().containsKey(pair.getKey()))
+            {
+                shareSum = (float) pair.getValue() / (float) getPeakResourceDemand().get(pair.getKey());
+            }
+        }
+        float share = shareSum / getVirtualSuppliedResources().size();
+
+        for(Map.Entry<String, Integer> pair : getProvidedResources().entrySet())
+        {
+            returnedMap.put(pair.getKey(), (int) Math.floor(pair.getValue() * share));
+        }
+
+        return returnedMap;
+    }
+
     public void setVirtualResourceSupply(String resourceName, int amount)
     {
         virtualResourceSupply.put(resourceName, amount);
