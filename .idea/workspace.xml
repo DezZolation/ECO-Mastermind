@@ -2,9 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="436ba233-ab2f-44b7-a88c-e6c7361f6a0a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/CalibrateTest/Test.eco" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/CalibrateTest/output/$UTILMODES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/CalibrateTest/output/Test$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/CalibrateTest/output/Test$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/CalibrateTest/output/Test.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/CalibrateTest/output/Test.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/Computer.eco" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/Dynamo.eco" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/ElectricEngine.eco" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/RegularEngine.eco" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/$UTILMODES.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/Computer$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/Computer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/Computer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/Dynamo$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/Dynamo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/Dynamo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/ElectricEngine$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/ElectricEngine.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/ElectricEngine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/RegularEngine$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/RegularEngine.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/compontents/HybridCar/processes/RegularEngine.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mastermind/EcoProcess.java" afterPath="$PROJECT_DIR$/src/com/mastermind/EcoProcess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mastermind/IORunner.java" afterPath="$PROJECT_DIR$/src/com/mastermind/IORunner.java" />
     </list>
     <ignored path="ECO-Mastermind.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/mastermind/ComponentRunner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,16 +75,12 @@
       <file leaf-file-name="EcoProcess.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mastermind/EcoProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1954023">
-              <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.27796054">
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1698#1699#0" expanded="true" />
                 <element signature="e#1761#1762#0" expanded="true" />
-                <element signature="e#3038#3039#0" expanded="true" />
-                <element signature="e#3082#3083#0" expanded="true" />
-                <element signature="e#3243#3244#0" expanded="true" />
-                <element signature="e#3283#3284#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,7 +145,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -156,9 +174,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,40 +318,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECO-Mastermind" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECO-Mastermind" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compontents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECO-Mastermind" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ECO-Mastermind" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compontents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CalibrateTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RecentsManager">
@@ -617,7 +603,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -627,7 +613,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31606767" sideWeight="0.50208336" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32017076" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32123798" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -681,6 +667,26 @@
     <entry file="file://$PROJECT_DIR$/src/com/mastermind/IORunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mastermind/ComponentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mastermind/IORunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="104" column="13" selection-start-line="94" selection-start-column="12" selection-end-line="104" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -696,10 +702,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1698#1699#0" expanded="true" />
             <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#3038#3039#0" expanded="true" />
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#3283#3284#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -736,10 +738,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1698#1699#0" expanded="true" />
             <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#3038#3039#0" expanded="true" />
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#3283#3284#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -776,10 +774,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1698#1699#0" expanded="true" />
             <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#3038#3039#0" expanded="true" />
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#3283#3284#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -829,10 +823,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1698#1699#0" expanded="true" />
             <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#3038#3039#0" expanded="true" />
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#3283#3284#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -947,13 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compontents/CalibrateTest/Test.eco">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runtime/classes/ecor/bsupply/VirtualBareMetalBattery.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.028716216">
@@ -1010,26 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mastermind/EcoProcessRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mastermind/ComponentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mastermind/IORunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1040,18 +1003,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mastermind/ComponentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/mastermind/EcoProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1954023">
-          <caret line="114" column="26" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.27796054">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1698#1699#0" expanded="true" />
             <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#3038#3039#0" expanded="true" />
-            <element signature="e#3082#3083#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#3283#3284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/mastermind/EcoProcessRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

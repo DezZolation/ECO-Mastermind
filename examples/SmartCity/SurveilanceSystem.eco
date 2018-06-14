@@ -1,0 +1,16 @@
+modes { low <: mid; mid <: high; }
+
+public class SurveilanceSystem {
+
+  public static void main(String[] args) {
+
+    int x;
+    sustainable {
+      for(x = 0; x < 100; x += 1) {
+        //System.out.println("x: " + x);
+      }
+    }
+    bsupply(battery*0.60)
+    demand(100) -> (100 - x);
+  }
+}

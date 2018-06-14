@@ -118,7 +118,7 @@ public class EcoProcess
         {
             if(getPeakResourceDemand().containsKey(pair.getKey()))
             {
-                shareSum = (float) pair.getValue() / (float) getPeakResourceDemand().get(pair.getKey());
+                shareSum += (float) pair.getValue() / (float) getPeakResourceDemand().get(pair.getKey());
             }
         }
         float share = shareSum / getVirtualSuppliedResources().size();
